@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>QRPoints Server</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>QRPoints Server - Sistema REP</h1>
+      <div class="actions">
+        <a class="btn" href="/generador">Generador QR</a>
+        <a class="btn" href="/reportes">Reportes REP</a>
+        <button class="btn" onclick="generarDatosDemo()">Datos Demo</button>
+        <a class="btn" href="/export.csv">Download CSV</a>
+        <a class="btn primary" href="/export.xlsx">Download Excel</a>
+      </div>
+    </header>
+    <main>
+      <section class="box">
+        <h2>Profiles</h2>
+        <table>
+          <thead>
+            <tr><th>Name</th><th>Points</th></tr>
+          </thead>
+          <tbody>
+            {% for p in profiles %}
+            <tr><td>{{ p['name'] }}</td><td>{{ p['points'] }}</td></tr>
+            {% else %}
+            <tr><td colspan="2">No profiles yet</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+
+      <section class="box">
+        <h2>Recent Scans</h2>
+        <table>
+          <thead>
+            <tr><th>Profile</th><th>Code</th><th>Points</th><th>Time</th></tr>
+          </thead>
+          <tbody>
+            {% for s in scans %}
+            <tr>
+              <td>{{ s['profile'] }}</td>
+              <td class="mono">{{ s['code'] }}</td>
+              <td>{{ s['points'] }}</td>
+              <td>
+                {% if s['ts'] %}
+                  {% set ts = (s['ts'] // 1000) if s['ts']|int > 9999999999 else s['ts'] %}
+                  {{ ts|int|datetimeformat }}
+                {% else %}
+                  -
+                {% endif %}
+              </td>
+            </tr>
+            {% else %}
+            <tr><td colspan="4">No scans yet</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <small>Local dev server - do not expose publicly without security</small>
+    </footer>
+    
+    <script>
+      async function generarDatosDemo() {
+        if (!confirm('¿Generar datos de demo? Esto creará QRs y retornos de ejemplo.')) return;
+        
+        try {
+          const response = await fetch('/demo/generar_datos', { method: 'POST' });
+          const result = await response.json();
+          
+          if (result.status === 'ok') {
+            alert(`Datos generados: ${result.qrs_generados} QRs, ${result.retornos_creados} retornos`);
+            location.reload();
+          } else {
+            alert('Error: ' + (result.error || 'No se pudieron generar datos'));
+          }
+        } catch (err) {
+          alert('Error: ' + err.message);
+        }
+      }
+    </script>
+  </body>
+</html>

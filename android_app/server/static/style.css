@@ -1,0 +1,12 @@
+body{font-family:Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f6f8fa;color:#111}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#fff;border-bottom:1px solid #e1e4e8}
+header h1{margin:0;font-size:18px}
+.actions .btn{margin-left:10px;text-decoration:none;padding:8px 12px;border-radius:6px;border:1px solid #d0d7de;background:#fff;color:#111}
+.actions .btn.primary{background:#0366d6;color:#fff;border-color:#0366d6}
+main{padding:20px;max-width:1100px;margin:0 auto}
+.box{background:#fff;padding:16px;border:1px solid #e1e4e8;border-radius:8px;margin-bottom:16px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:8px 10px;border-bottom:1px solid #eef2f6;text-align:left}
+th{background:#fafbfc;font-weight:600}
+.mono{font-family:Consolas,monospace;font-size:13px}
+footer{padding:12px 24px;text-align:center;color:#6a737d;font-size:12px}

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Reportes REP - Sistema</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+      .lote-btn { margin: 4px; padding: 8px 12px; display: inline-block; }
+      .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+      .stat-card { background: #f6f8fa; padding: 12px; border-radius: 6px; text-align: center; }
+      .stat-number { font-size: 24px; font-weight: bold; color: #0366d6; }
+      .stat-label { font-size: 12px; color: #6a737d; }
+      .retorno-table { font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Reportes REP</h1>
+      <div class="actions">
+        <a class="btn" href="/">Dashboard</a>
+        <a class="btn" href="/generador">Generador QR</a>
+      </div>
+    </header>
+    <main>
+      <section class="box">
+        <h2>Seleccionar Lote de Reporte</h2>
+        <div>
+          {% for lote in lotes %}
+          <button class="btn lote-btn" onclick="cargarReporte('{{ lote }}')">{{ lote }}</button>
+          {% endfor %}
+        </div>
+      </section>
+
+      <div id="reporteSection" style="display: none;">
+        <section class="box">
+          <h2>Resumen Lote <span id="loteActual"></span></h2>
+          <div class="stats" id="statsContainer">
+          </div>
+        </section>
+
+        <section class="box">
+          <h2>Detalle de Retornos</h2>
+          <div style="overflow-x: auto;">
+            <table class="retorno-table">
+              <thead>
+                <tr>
+                  <th>QR ID</th>
+                  <th>Marca</th>
+                  <th>Estado</th>
+                  <th>Peso (kg)</th>
+                  <th>Destino</th>
+                  <th>Tienda</th>
+                  <th>Cliente</th>
+                  <th>Puntos</th>
+                </tr>
+              </thead>
+              <tbody id="retornosTableBody">
+              </tbody>
+            </table>
+          </div>
+          
+          <div style="margin-top: 16px;">
+            <button class="btn primary" onclick="exportarLote()" id="exportBtn" style="display: none;">
+              Exportar CSV
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+    
+    <script>
+      let loteActual = null;
+      let datosReporte = null;
+      
+      async function cargarReporte(lote) {
+        try {
+          const response = await fetch(`/reporte_rep/${lote}`);
+          const data = await response.json();
+          
+          if (data.lote_reporte) {
+            loteActual = lote;
+            datosReporte = data;
+            mostrarReporte(data);
+          } else {
+            alert('Error: ' + (data.error || 'No se pudo cargar reporte'));
+          }
+        } catch (err) {
+          alert('Error: ' + err.message);
+        }
+      }
+      
+      function mostrarReporte(data) {
+        document.getElementById('loteActual').textContent = data.lote_reporte;
+        
+        // Mostrar estadísticas
+        const stats = data.resumen;
+        document.getElementById('statsContainer').innerHTML = `
+          <div class="stat-card">
+            <div class="stat-number">${stats.total_retornos}</div>
+            <div class="stat-label">Total Retornos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">${stats.reuso_codelpa}</div>
+            <div class="stat-label">Reuso CODELPA</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">${stats.valorizacion_inproplas}</div>
+            <div class="stat-label">Valorización Inproplas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">${stats.peso_total_reuso_kg.toFixed(2)}</div>
+            <div class="stat-label">Kg para Reuso</div>
+          </div>
+        `;
+        
+        // Mostrar tabla de retornos
+        const tbody = document.getElementById('retornosTableBody');
+        tbody.innerHTML = data.retornos.map(r => `
+          <tr>
+            <td class="mono">${r.qr_id}</td>
+            <td>${r.marca_envase}</td>
+            <td>${r.estado_retorno}</td>
+            <td>${r.peso_envase_kg}</td>
+            <td>${r.destino.replace('_', ' ')}</td>
+            <td>${r.tienda_retorno}</td>
+            <td>${r.cliente_profile}</td>
+            <td>${r.puntos_otorgados}</td>
+          </tr>
+        `).join('');
+        
+        document.getElementById('reporteSection').style.display = 'block';
+        document.getElementById('exportBtn').style.display = 'inline-block';
+      }
+      
+      function exportarLote() {
+        if (!loteActual) return;
+        window.open(`/export_rep_csv/${loteActual}`, '_blank');
+      }
+    </script>
+  </body>
+</html>

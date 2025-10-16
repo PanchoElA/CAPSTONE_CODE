@@ -1,0 +1,73 @@
+# Archivos compilados
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Archivos de entorno virtual
+venv/
+env/
+ENV/
+
+# Archivos de configuración local
+.env
+local.properties
+
+# Archivos de Android
+android_app/app/build/
+android_app/build/
+android_app/gradle/
+android_app/.gradle/
+client_app/app/build/
+client_app/build/
+client_app/gradle/
+client_app/.gradle/
+
+# Archivos temporales de Gradle
+*.log
+*.tmp
+*.temp
+
+# Archivos de sistema Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Archivos de sistema macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Base de datos SQLite (si contiene datos sensibles)
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Archivos de respaldo
+*.bak
+*.backup
+
+# Certificados y claves
+*.key
+*.pem
+*.p12
+*.jks
+*.keystore
+
+# Archivos de prueba temporales
+test_*_temp.py
+temp_*.py
+
+# Archivos específicos del proyecto que no deben subirse
+QRs_EJEMPLO_*/
+*.qr_generated

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">APP SUSTENTABLE</string>
+    
+    <!-- Main Activity -->
+    <string name="welcome_title">¡Bienvenido al sistema REP!</string>
+    <string name="welcome_subtitle">Consulta tus puntos y retornos</string>
+    <string name="input_nombre_hint">Ingresa tu nombre</string>
+    <string name="btn_buscar">Buscar</string>
+    <string name="puntos_acumulados">Puntos Acumulados</string>
+    <string name="retornos_realizados">Retornos Realizados</string>
+    <string name="peso_total">Peso Total</string>
+    <string name="historial_reciente">Historial Reciente</string>
+    <string name="ver_todo">Ver Todo</string>
+    <string name="no_retornos">No tienes retornos registrados</string>
+    
+    <!-- Historial Activity -->
+    <string name="historial_completo">Historial Completo</string>
+    
+    <!-- Item Retorno -->
+    <string name="qr_prefix">QR:</string>
+    <string name="marca_prefix">Marca:</string>
+    <string name="peso_prefix">Peso:</string>
+    <string name="puntos_prefix">Puntos:</string>
+    <string name="fecha_prefix">Fecha:</string>
+    <string name="destino_prefix">Destino:</string>
+    
+    <!-- Estados de retorno -->
+    <string name="estado_bueno">BUENO</string>
+    <string name="estado_reparable">REPARABLE</string>
+    <string name="estado_danado">DAÑADO</string>
+    
+    <!-- Destinos -->
+    <string name="reuso_codelpa">REUSO CODELPA</string>
+    <string name="valorizacion_inproplas">VALORIZACIÓN INPROPLAS</string>
+    
+    <!-- Errores y mensajes -->
+    <string name="error_conexion">Error de conexión</string>
+    <string name="error_cliente_no_encontrado">Cliente no encontrado</string>
+    <string name="error_ingrese_nombre">Ingresa tu nombre</string>
+    <string name="cargando">Cargando…</string>
+</resources>
