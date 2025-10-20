@@ -1,0 +1,41 @@
+com.simple.qrscanner.app-coordinatorlayout-1.1.0-0 C:\Users\Franc\.gradle\caches\8.8\transforms\00a118470984165cdc2e67ce8c9b8044\transformed\coordinatorlayout-1.1.0\res
+com.simple.qrscanner.app-core-runtime-2.2.0-1 C:\Users\Franc\.gradle\caches\8.8\transforms\00c69a90e52b6c9760d7962357fff39e\transformed\core-runtime-2.2.0\res
+com.simple.qrscanner.app-jetified-emoji2-views-helper-1.2.0-2 C:\Users\Franc\.gradle\caches\8.8\transforms\246a49aaac8641f7b7e75f4dd31a15c3\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.simple.qrscanner.app-jetified-camera-video-1.3.0-3 C:\Users\Franc\.gradle\caches\8.8\transforms\2cba2861d8e71fe9947d00bb756d3a00\transformed\jetified-camera-video-1.3.0\res
+com.simple.qrscanner.app-jetified-viewpager2-1.0.0-4 C:\Users\Franc\.gradle\caches\8.8\transforms\304526ddbc62536eb95145bc7a495d10\transformed\jetified-viewpager2-1.0.0\res
+com.simple.qrscanner.app-transition-1.2.0-5 C:\Users\Franc\.gradle\caches\8.8\transforms\333912f265c0a3164158e10b3539fa16\transformed\transition-1.2.0\res
+com.simple.qrscanner.app-jetified-camera-view-1.3.0-6 C:\Users\Franc\.gradle\caches\8.8\transforms\3bc345a97b189f3a18b525ff5bcef6c5\transformed\jetified-camera-view-1.3.0\res
+com.simple.qrscanner.app-jetified-camera-core-1.3.0-7 C:\Users\Franc\.gradle\caches\8.8\transforms\47f4b0e249b5cfba8c7653dd8efe8bed\transformed\jetified-camera-core-1.3.0\res
+com.simple.qrscanner.app-jetified-play-services-basement-18.1.0-8 C:\Users\Franc\.gradle\caches\8.8\transforms\49fde9eabb4a8cc8a441bb5e76d6ffb8\transformed\jetified-play-services-basement-18.1.0\res
+com.simple.qrscanner.app-jetified-savedstate-1.2.1-9 C:\Users\Franc\.gradle\caches\8.8\transforms\5b0863642ddd67058460ade33f9290cd\transformed\jetified-savedstate-1.2.1\res
+com.simple.qrscanner.app-drawerlayout-1.1.1-10 C:\Users\Franc\.gradle\caches\8.8\transforms\6155074034b59c7f08cb23ca016f85d2\transformed\drawerlayout-1.1.1\res
+com.simple.qrscanner.app-jetified-camera-camera2-1.3.0-11 C:\Users\Franc\.gradle\caches\8.8\transforms\6bf58904cf27f2e3b33c2efe89baf329\transformed\jetified-camera-camera2-1.3.0\res
+com.simple.qrscanner.app-material-1.10.0-12 C:\Users\Franc\.gradle\caches\8.8\transforms\6e949c8c9b776c666061b62e00281267\transformed\material-1.10.0\res
+com.simple.qrscanner.app-jetified-lifecycle-process-2.6.1-13 C:\Users\Franc\.gradle\caches\8.8\transforms\6f7aa3568dac4a1e5ca6b331c73e97bb\transformed\jetified-lifecycle-process-2.6.1\res
+com.simple.qrscanner.app-jetified-profileinstaller-1.3.0-14 C:\Users\Franc\.gradle\caches\8.8\transforms\7734879476a61f3b0f8b665200da2240\transformed\jetified-profileinstaller-1.3.0\res
+com.simple.qrscanner.app-jetified-appcompat-resources-1.6.1-15 C:\Users\Franc\.gradle\caches\8.8\transforms\7bbbe8821b01e523eb302353b907e018\transformed\jetified-appcompat-resources-1.6.1\res
+com.simple.qrscanner.app-jetified-emoji2-1.2.0-16 C:\Users\Franc\.gradle\caches\8.8\transforms\7c3f5eef7bbf74c89162bf024089e22b\transformed\jetified-emoji2-1.2.0\res
+com.simple.qrscanner.app-lifecycle-livedata-2.6.1-17 C:\Users\Franc\.gradle\caches\8.8\transforms\7d8275a780d17ea307b4f79da73eef77\transformed\lifecycle-livedata-2.6.1\res
+com.simple.qrscanner.app-jetified-lifecycle-viewmodel-savedstate-2.6.1-18 C:\Users\Franc\.gradle\caches\8.8\transforms\7e7ebe5458aaf13d6c30a90559a3606a\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.1\res
+com.simple.qrscanner.app-core-1.12.0-19 C:\Users\Franc\.gradle\caches\8.8\transforms\87329b5dcdbc5a9de85a7a45039c5711\transformed\core-1.12.0\res
+com.simple.qrscanner.app-jetified-startup-runtime-1.1.1-20 C:\Users\Franc\.gradle\caches\8.8\transforms\910c522b3ac9cc2523d3c896805e8acb\transformed\jetified-startup-runtime-1.1.1\res
+com.simple.qrscanner.app-jetified-core-ktx-1.12.0-21 C:\Users\Franc\.gradle\caches\8.8\transforms\93d4193b655c4fa4b60b438ff5e3b72d\transformed\jetified-core-ktx-1.12.0\res
+com.simple.qrscanner.app-appcompat-1.6.1-22 C:\Users\Franc\.gradle\caches\8.8\transforms\985355568c2d65ee77d4ff6eb1c92cdf\transformed\appcompat-1.6.1\res
+com.simple.qrscanner.app-lifecycle-livedata-core-2.6.1-23 C:\Users\Franc\.gradle\caches\8.8\transforms\a044d359c0fbfa5b1f6d89248bf1395f\transformed\lifecycle-livedata-core-2.6.1\res
+com.simple.qrscanner.app-lifecycle-runtime-2.6.1-24 C:\Users\Franc\.gradle\caches\8.8\transforms\a2d7570b85462ab3f07aa904b10d3e63\transformed\lifecycle-runtime-2.6.1\res
+com.simple.qrscanner.app-jetified-play-services-base-18.1.0-25 C:\Users\Franc\.gradle\caches\8.8\transforms\a4e2265bfb27cb7e5cbf8907c120a37e\transformed\jetified-play-services-base-18.1.0\res
+com.simple.qrscanner.app-fragment-1.3.6-26 C:\Users\Franc\.gradle\caches\8.8\transforms\b1d396779eef990e37f2248c3c0fef11\transformed\fragment-1.3.6\res
+com.simple.qrscanner.app-recyclerview-1.1.0-27 C:\Users\Franc\.gradle\caches\8.8\transforms\b247a74f69ddbc7422a884c9bfb490cd\transformed\recyclerview-1.1.0\res
+com.simple.qrscanner.app-jetified-activity-1.8.0-28 C:\Users\Franc\.gradle\caches\8.8\transforms\c03aa7367f485e5bc14c8892fa429169\transformed\jetified-activity-1.8.0\res
+com.simple.qrscanner.app-lifecycle-viewmodel-2.6.1-29 C:\Users\Franc\.gradle\caches\8.8\transforms\c46429c0d1c56cb17661c78ffa122704\transformed\lifecycle-viewmodel-2.6.1\res
+com.simple.qrscanner.app-jetified-camera-lifecycle-1.3.0-30 C:\Users\Franc\.gradle\caches\8.8\transforms\c5589721ce1a8af68da6bea54e05e6d1\transformed\jetified-camera-lifecycle-1.3.0\res
+com.simple.qrscanner.app-cardview-1.0.0-31 C:\Users\Franc\.gradle\caches\8.8\transforms\d0993b9d2ecd858e0836331a7484d566\transformed\cardview-1.0.0\res
+com.simple.qrscanner.app-constraintlayout-2.1.4-32 C:\Users\Franc\.gradle\caches\8.8\transforms\dd9b61c5e18bd82dbc502af27363ca35\transformed\constraintlayout-2.1.4\res
+com.simple.qrscanner.app-jetified-annotation-experimental-1.3.1-33 C:\Users\Franc\.gradle\caches\8.8\transforms\f59b90a3cdcf5fd7da5d395d9c03bfe5\transformed\jetified-annotation-experimental-1.3.1\res
+com.simple.qrscanner.app-pngs-34 C:\Users\Franc\OneDrive - Universidad Adolfo Ibanez\Desktop\Codigo CAPSTONE\APP_SCAN\app\build\generated\res\pngs\debug
+com.simple.qrscanner.app-resValues-35 C:\Users\Franc\OneDrive - Universidad Adolfo Ibanez\Desktop\Codigo CAPSTONE\APP_SCAN\app\build\generated\res\resValues\debug
+com.simple.qrscanner.app-packageDebugResources-36 C:\Users\Franc\OneDrive - Universidad Adolfo Ibanez\Desktop\Codigo CAPSTONE\APP_SCAN\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.simple.qrscanner.app-packageDebugResources-37 C:\Users\Franc\OneDrive - Universidad Adolfo Ibanez\Desktop\Codigo CAPSTONE\APP_SCAN\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.simple.qrscanner.app-debug-38 C:\Users\Franc\OneDrive - Universidad Adolfo Ibanez\Desktop\Codigo CAPSTONE\APP_SCAN\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.simple.qrscanner.app-debug-39 C:\Users\Franc\OneDrive - Universidad Adolfo Ibanez\Desktop\Codigo CAPSTONE\APP_SCAN\app\src\debug\res
+com.simple.qrscanner.app-main-40 C:\Users\Franc\OneDrive - Universidad Adolfo Ibanez\Desktop\Codigo CAPSTONE\APP_SCAN\app\src\main\res

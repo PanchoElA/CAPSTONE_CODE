@@ -16,7 +16,7 @@ class NetworkService {
         // Configurable server settings - inspired by spy repository's approach
         private const val SERVER_IP = "192.168.5.53"
         private const val SERVER_PORT = "5000"
-        private const val ENDPOINT = "retorno_rep"
+        private const val ENDPOINT = "scan"
         private const val BASE_URL = "http://$SERVER_IP:$SERVER_PORT"
         
         // Connection timeouts
@@ -74,13 +74,8 @@ class NetworkService {
      */
     private fun createQRPayload(qrCode: String, userName: String): JSONObject {
         return JSONObject().apply {
-            put("qr_id", qrCode)
-            put("estado_retorno", "BUENO")
-            put("tienda_retorno", "MUNDO_PINTURA_CENTRAL")
-            put("cliente_profile", userName)
-            put("evidencia", "INSPECCION_VISUAL")
-            put("timestamp", System.currentTimeMillis())
-            put("app_version", "1.0")
+            put("qr_code", qrCode)
+            put("user_name", userName)
         }
     }
     
