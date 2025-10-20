@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include/exclude files from backup -->
+    <include domain="file" path="." />
+    <exclude domain="file" path="temp/" />
+    <exclude domain="database" path="temp.db" />
+</full-backup-content>

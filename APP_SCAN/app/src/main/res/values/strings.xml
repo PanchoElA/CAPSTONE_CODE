@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QR Scanner</string>
+    <string name="scan_qr_code">Scan QR Code</string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="name_hint">Your name</string>
+    <string name="name_required">Please enter your name</string>
+    <string name="camera_permission_needed">Camera permission is required to scan QR codes</string>
+    <string name="camera_permission_denied">Camera permission denied. Please enable it in settings.</string>
+    <string name="scan_successful">QR code scanned successfully!</string>
+    <string name="scan_failed">Failed to scan QR code</string>
+    <string name="back">Back</string>
+    <string name="point_camera">Point camera at QR code</string>
+    <string name="scanning">Scanning...</string>
+    <string name="sending_to_server">Sending to server...</string>
+    <string name="success">Success! QR sent to server</string>
+    <string name="error">Error occurred</string>
+    <string name="network_error">Network error</string>
+</resources>

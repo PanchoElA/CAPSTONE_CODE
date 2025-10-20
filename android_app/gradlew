@@ -1,4 +1,0 @@
-#!/bin/sh
-DIRNAME="$(dirname "$0")"
-APP_HOME="$DIRNAME"
-java -jar "$APP_HOME/gradle/wrapper/gradle-wrapper.jar" "$@"
