@@ -14,6 +14,9 @@ ENV/
 local.properties
 
 # Archivos de Android
+APP_SCAN/app/build/
+APP_SCAN/build/
+APP_SCAN/.gradle/
 android_app/app/build/
 android_app/build/
 android_app/gradle/
