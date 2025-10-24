@@ -8,11 +8,13 @@ from flask import Flask, request, jsonify, render_template_string
 import sqlite3
 from datetime import datetime
 import os
+import hashlib
 
 app = Flask(__name__)
 
 # Configuración
 DATABASE = 'rep_database.db'
+QR_SECRET_KEY = "REP_CODELPA_2025_SEGURO"  # Misma clave que Desktop App
 
 def init_database():
     """Inicializa la base de datos"""
@@ -115,9 +117,45 @@ def index():
                                 total_users=total_users, 
                                 recent_scans=recent_scans)
 
+def validate_qr_security(qr_code):
+    """Validar si el QR es auténtico (generado por Desktop App)"""
+    try:
+        # Verificar formato REP_
+        if not qr_code.startswith("REP_"):
+            return False, "QR no generado por sistema autorizado"
+            
+        # Extraer partes del QR
+        parts = qr_code.split("_")
+        if len(parts) < 6:  # REP_TYPE_ID_TIMESTAMP_UNIQUE_HASH
+            return False, "Formato de QR inválido"
+            
+        # Extraer hash de seguridad (último elemento)
+        provided_hash = parts[-1]
+        
+        # Reconstruir contenido original sin hash
+        content_parts = parts[1:-1]  # Sin "REP_" y sin hash final
+        original_content = "_".join(content_parts)
+        
+        # Recalcular hash esperado
+        expected_hash = hashlib.sha256(
+            f"{original_content}_{QR_SECRET_KEY}".encode()
+        ).hexdigest()[:16]
+        
+        # Comparar hashes
+        if provided_hash == expected_hash:
+            qr_type = parts[1]
+            identifier = parts[2]
+            timestamp = parts[3]
+            return True, f"QR válido - {qr_type}: {identifier} ({timestamp})"
+        else:
+            return False, "QR no autorizado - Hash de seguridad inválido"
+            
+    except Exception as e:
+        return False, f"Error al validar QR: {str(e)}"
+
 @app.route('/scan', methods=['POST'])
 def process_scan():
-    """Endpoint principal para recibir datos de QR escaneados"""
+    """Endpoint principal para recibir datos de QR escaneados con validación"""
     try:
         data = request.get_json()
         
@@ -130,7 +168,18 @@ def process_scan():
         if not qr_code or not user_name:
             return jsonify({"error": "Missing qr_code or user_name"}), 400
         
-        # Guardar en base de datos
+        # VALIDAR QR DE SEGURIDAD
+        is_valid, validation_message = validate_qr_security(qr_code)
+        
+        if not is_valid:
+            print(f"❌ QR rechazado - Usuario: {user_name}, Razón: {validation_message}")
+            return jsonify({
+                "error": "QR no autorizado",
+                "message": validation_message,
+                "status": "rejected"
+            }), 403
+        
+        # Guardar en base de datos (solo QRs válidos)
         conn = sqlite3.connect(DATABASE)
         cursor = conn.cursor()
         
@@ -143,7 +192,8 @@ def process_scan():
         conn.commit()
         conn.close()
         
-        print(f"✅ QR escaneado - ID: {scan_id}, Usuario: {user_name}, QR: {qr_code}")
+        print(f"✅ QR válido escaneado - ID: {scan_id}, Usuario: {user_name}")
+        print(f"📋 Validación: {validation_message}")
         
         return jsonify({
             "status": "success",

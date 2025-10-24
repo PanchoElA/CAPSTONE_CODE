@@ -115,6 +115,10 @@ class NetworkService {
                 Log.w(TAG, "Bad request - Invalid QR data format")
                 callback.onError("Invalid QR data format", responseCode)
             }
+            responseCode == 403 -> {
+                Log.w(TAG, "QR not authorized - Only Desktop App generated QRs allowed")
+                callback.onError("QR NO AUTORIZADO: Solo se permiten códigos QR generados por Desktop App", responseCode)
+            }
             responseCode == 404 -> {
                 Log.w(TAG, "Endpoint not found")
                 callback.onError("Server endpoint not found", responseCode)
